@@ -1,0 +1,116 @@
+body {
+background-image: url("../img/backdrop.png");
+background-size: cover;
+background-position: 0px -110px;
+background-repeat: no-repeat;
+} 
+
+.content {
+max-width: 700px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+font-family: "Carrois Gothic";
+margin-bottom: 50px;
+}
+
+.top-nav{
+color: white;
+margin-left:auto;
+margin-right: auto;
+max-width: 500px;
+
+}
+
+.new-game {
+float: right;
+color: white;
+margin-top: 30px;
+}
+
+.new-game:visited {
+color: white;
+}
+
+.title {
+margin-top: 40px;
+}
+
+
+.question-title {
+padding: 20px;
+border-radius: 50px;
+background-color:#0060FF;
+color: white;
+margin-top: 30px;
+font-size: 25px;
+}
+
+
+
+
+
+.question-list li {
+	background-color: #0060FF; 
+	margin: 20px;
+	padding: 20px 0px 20px;
+	border-radius: 50px;
+
+}
+
+[class*="-button"] {
+	background-color: #0060FF;
+	border: none;
+	padding: 10px 200px;
+	color: white;
+	font-size: 18px;
+}
+
+
+.question-list li:hover, button:hover {
+	cursor: pointer;
+}
+
+.score {
+	color: white;
+	font-size: 18px;
+}
+
+
+.progress {
+	width: 100px;
+	height: 25px;
+	background-color: grey;
+	border-left: 10px solid black ;
+	border-right: 5px solid black ;
+	border-radius: 4px;
+	margin-top: 50px;
+	display: inline-block;
+	position: relative;
+	margin-right: 445px;
+}
+
+.saber-switch {
+	background-color: black;
+	width: 20px;
+	height: 8px;
+	margin-left: 40px;
+	position: relative;
+
+}
+
+.light {
+	width: 450px;
+	padding: 3px 0px 3px;
+	background-color: rgba(0,250,0, 0.4);
+	margin-left: 65px;
+	position: relative;
+	border-radius: 50px;
+	text-align: center;
+	color:white;
+}
+
+.info {
+	background-color: black;
+	border: solid 4px white;
+}
