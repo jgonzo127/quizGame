@@ -76,17 +76,17 @@ $(document).ready(function() {
 //hide question bar	
 	$('.question-title').hide();
 //start the game
-	$('.start').on('click', function() {
-	currentQuestion = 0;
-	var newChoices= "<li><button id='sub' type = 'submit' class = '1-button'>" + Questions[currentQuestion].choices[0] + "</button></li>"
-	  + "<li><button id='sub' type='submit' class = '2-button'>" + Questions[currentQuestion].choices[1] + "</button></li>" + "</button></li>" 
-	  + "<li><button id='sub' type='submit' class = '3-button'>" + Questions[currentQuestion].choices[2] + "</button></li>" + "</button></li>" 
-	  + "<li><button id='sub' type='submit' class = '4-button'>" + Questions[currentQuestion].choices[3] + "</button></li>" ;
-	var newquestion = "<div>" + Questions[currentQuestion].question + "</div>";
-	$('.question-list').html(newChoices);
-	$('.question-title').html(newquestion);
-	$('.question-title').show();
-	nextQuestion();
+	$('.start-button').on('click', function() {
+		currentQuestion = 0;
+		var newChoices= "<li><button id='sub' type = 'submit' class = '1-button'>" + Questions[currentQuestion].choices[0] + "</button></li>"
+		  + "<li><button id='sub' type='submit' class = '2-button'>" + Questions[currentQuestion].choices[1] + "</button></li>" + "</button></li>" 
+		  + "<li><button id='sub' type='submit' class = '3-button'>" + Questions[currentQuestion].choices[2] + "</button></li>" + "</button></li>" 
+		  + "<li><button id='sub' type='submit' class = '4-button'>" + Questions[currentQuestion].choices[3] + "</button></li>" ;
+		var newquestion = "<div>" + Questions[currentQuestion].question + "</div>";
+		$('.question-list').html(newChoices);
+		$('.question-title').html(newquestion);
+		$('.question-title').show();
+		nextQuestion();
 	
 	});
 
