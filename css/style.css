@@ -38,16 +38,13 @@ margin-top: 40px;
 
 
 .question-title {
-padding: 20px;
-border-radius: 50px;
-background-color:#0060FF;
-color: white;
-margin-top: 30px;
-font-size: 25px;
+	padding: 20px;
+	border-radius: 50px;
+	background-color:#0060FF;
+	color: white;
+	margin-top: 30px;
+	font-size: 25px;
 }
-
-
-
 
 
 .question-list li {
@@ -61,14 +58,21 @@ font-size: 25px;
 [class*="-button"] {
 	background-color: #0060FF;
 	border: none;
-	padding: 10px 200px;
+	padding: 10px 250px;
 	color: white;
 	font-size: 18px;
+
 }
 
+.question-list li:hover {
+	box-shadow: 2px 2px;
+}
+	
 
-.question-list li:hover, button:hover {
+
+button:hover {
 	cursor: pointer;
+
 }
 
 .score {
@@ -114,3 +118,10 @@ font-size: 25px;
 	background-color: black;
 	border: solid 4px white;
 }
+
+@media only screen and (max-width: 1800px) {
+	body {
+		background-position: center -30px;
+	}
+
+} 
