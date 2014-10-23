@@ -70,11 +70,8 @@ $(document).ready(function() {
 ]
 
 //variables
-	var currentQuestion = 0;
-	var newChoices= "<li><button id='sub' type = 'submit' class = '1-button'>" + Questions[currentQuestion].choices[0] + "</button></li>"
-				  + "<li><button id='sub' type='submit' class = '2-button'>" + Questions[currentQuestion].choices[1] + "</button></li>" 
-				  + "<li><button id='sub' type='submit' class = '3-button'>" + Questions[currentQuestion].choices[2] + "</button></li>" 
-				  + "<li><button id='sub' type='submit' class = '4-button'>" + Questions[currentQuestion].choices[3] + "</button></li>" ;
+	
+	
 
 
 //start a new game	
@@ -89,10 +86,13 @@ $(document).ready(function() {
 	$('.brightlight').hide();
 //start the game
 	$('.start-button').on('click', function() {
-		currentQuestion = 0;
+		Questions.question_num = 0;
 		correct = 0;
-		newChoices;
-		var newquestion = "<div>" + Questions[currentQuestion].question + "</div>";
+		var newChoices= "<li><button id='sub' type = 'submit' class = '1-button'>" + Questions[Questions.question_num].choices[0] + "</button></li>"
+				  + "<li><button id='sub' type='submit' class = '2-button'>" + Questions[Questions.question_num].choices[1] + "</button></li>" 
+				  + "<li><button id='sub' type='submit' class = '3-button'>" + Questions[Questions.question_num].choices[2] + "</button></li>" 
+				  + "<li><button id='sub' type='submit' class = '4-button'>" + Questions[Questions.question_num].choices[3] + "</button></li>" ;
+		var newquestion = "<div>" + Questions[Questions.question_num].question + "</div>";
 		$('.question-list').html(newChoices);
 		$('.question-title').html(newquestion);
 		$('.question-title').show();
@@ -106,18 +106,16 @@ $(document).ready(function() {
 
 //cycles through the quiz
 	function nextQuestion() {
-		  currentQuestion = 0;
-		  correct = 0;
 		  ans_check();
 		 
 		  $('.question-list').on('click', '#sub', function() {
-		     if (currentQuestion < 5) {
-		     	 currentQuestion++;
-			   var newquestion = "<div>" + Questions[currentQuestion].question + "</div>";
-			   var newChoices= "<li><button id='sub' type = 'submit' class = '1-button'>" + Questions[currentQuestion].choices[0] + "</button></li>"
-				  + "<li><button id='sub' type='submit' class = '2-button'>" + Questions[currentQuestion].choices[1] + "</button></li>" 
-				  + "<li><button id='sub' type='submit' class = '3-button'>" + Questions[currentQuestion].choices[2] + "</button></li>" 
-				  + "<li><button id='sub' type='submit' class = '4-button'>" + Questions[currentQuestion].choices[3] + "</button></li>" ;
+		     if (Questions.question_num < 5) {
+		     	 Questions.question_num++;
+			   var newquestion = "<div>" + Questions[Questions.question_num].question + "</div>";
+			   var newChoices= "<li><button id='sub' type = 'submit' class = '1-button'>" + Questions[Questions.question_num].choices[0] + "</button></li>"
+				  + "<li><button id='sub' type='submit' class = '2-button'>" + Questions[Questions.question_num].choices[1] + "</button></li>" 
+				  + "<li><button id='sub' type='submit' class = '3-button'>" + Questions[Questions.question_num].choices[2] + "</button></li>" 
+				  + "<li><button id='sub' type='submit' class = '4-button'>" + Questions[Questions.question_num].choices[3] + "</button></li>" ;
 				$('.question-list').html(newChoices);
 				$('.question-title').html(newquestion);
 				$('.question-title').show();
@@ -127,13 +125,13 @@ $(document).ready(function() {
 				$(".question-title").hide();
 				$('.question-list').hide();
 					if (correct > 4) {
-					$('.score').html("Congratulations! You've answered "+ correct + " of " + (currentQuestion+1)  + " correct! The Force is strong with you!");
+					$('.score').html("Congratulations! You've answered "+ correct + " of " + (Questions.question_num+1)  + " correct! The Force is strong with you!");
 					$('.currentQ').hide();
 					$('.light').hide();
 					$('.brightlight').addClass('blueLight');
 					
 					} else {
-						$('.score').html("You've only answered "+ correct + " of " + (currentQuestion+1)  + " correct. I find your lack of faith disturbing...");
+						$('.score').html("You've only answered "+ correct + " of " + (Questions.question_num+1)  + " correct. I find your lack of faith disturbing...");
 						$('.currentQ').hide();
 						$('.light').hide();
 						$('.brightlight').addClass('redLight');
@@ -147,7 +145,7 @@ $(document).ready(function() {
    function ans_check() {
   	correct=0;
   	$('.question-list').on('click', '#sub', function() {
-	var useranswer = Questions[currentQuestion].answer;
+	var useranswer = Questions[Questions.question_num].answer;
 	var userguess = $(this).text();
   	
   	console.log(userguess);
@@ -167,7 +165,7 @@ $(document).ready(function() {
 
 //keeps track of current question  
 	function counter() {
-  			$('.currentQ').html("Question " + (currentQuestion + 1) +' of 6');
+  			$('.currentQ').html("Question " + (Questions.question_num + 1) +' of 6');
   		
   	}
 //lightsaber scrolling effect 
@@ -176,18 +174,18 @@ $(document).ready(function() {
   		$('.question-list').on('click', function() {
   		
   		$('.brightlight').css({'width': '0px'});	
-	  		if (currentQuestion == 0) {
+	  		if (Questions.question_num == 0) {
 	  			$('.brightlight').css({'width': '0px'});
-	  		} else if (currentQuestion==1) {
+	  		} else if (Questions.question_num==1) {
 	  		  	$('.brightlight').show();
 	  		  	$('.brightlight').css({'width': '75px'});
-	  		} else if (currentQuestion == 2) {
+	  		} else if (Questions.question_num == 2) {
 	  			$('.brightlight').css({'width': '150px'});
-	  		} else if (currentQuestion == 3) {
+	  		} else if (Questions.question_num == 3) {
 	  			$('.brightlight').css({'width': '225px'});
-	  		} else if (currentQuestion == 4) {
+	  		} else if (Questions.question_num == 4) {
 	  			$('.brightlight').css({'width': '300px'});
-	  		} else if (currentQuestion == 5) {
+	  		} else if (Questions.question_num == 5) {
 	  			$('.brightlight').css({'width': '375px'});
 	  		} else {
 	  			$('.brightlight').css({'width': '450px'});
