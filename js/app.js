@@ -28,7 +28,7 @@ $(document).ready(function() {
 		choices: [
 		"Kaminoan",
 		"Imperial",
-		"Hutt",
+		"Huttese",
 		"Mandalorian"
 		],
 		question_num:2,
