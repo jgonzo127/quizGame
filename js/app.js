@@ -35,7 +35,7 @@ $(document).ready(function() {
 		answer:"Mandalorian"
 	},
 		{
-		question: "Where is Han Solo frozen in Carbonite?",
+		question: "On which planet is Han Solo frozen in Carbonite?",
 		choices: [
 		"Bespin",
 		"The Death Star",
@@ -130,13 +130,13 @@ $(document).ready(function() {
 					$('.score').html("Congratulations! You've answered "+ correct + " of " + (currentQuestion+1)  + " correct! The Force is strong with you!");
 					$('.currentQ').hide();
 					$('.light').hide();
-					$(".brightlight").css({'background-color': 'blue'});
+					$('.brightlight').addClass('blueLight');
 					
 					} else {
 						$('.score').html("You've only answered "+ correct + " of " + (currentQuestion+1)  + " correct. I find your lack of faith disturbing...");
 						$('.currentQ').hide();
 						$('.light').hide();
-						$('.brightlight').css({'background-color': 'red'});
+						$('.brightlight').addClass('redLight');
 					}
 				}
 			
@@ -154,10 +154,10 @@ $(document).ready(function() {
   	
 	  	if (useranswer == userguess) {
 	  		correct++;
-	  		$('.score').html("Correct! You've answered "+ correct + " of " + (currentQuestion+1)  + " correct!");
+	  		$('.score').html("Never tell me the odds! You've answered "+ correct + " correct!");
 	  		$(userguess).css({"background-color" : "green"});
 	  	} else {
-	  		$('.score').html("Sorry, that wasn't the droid I was looking for... You've answered "+ correct + " of " + (currentQuestion+1)  + " correct!");
+	  		$('.score').html("Sorry, that wasn't the droid I was looking for... You've answered "+ correct + " correct!");
 	  		} 
 		})
 
