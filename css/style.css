@@ -27,7 +27,7 @@ max-width: 500px;
 .new-game {
 float: right;
 color: white;
-margin-top: 30px;
+margin-top: 10px;
 }
 
 .new-game:visited {
@@ -35,7 +35,7 @@ color: white;
 }
 
 .title {
-margin-top: 40px;
+margin-top: 15px;
 }
 
 
@@ -44,7 +44,7 @@ margin-top: 40px;
 	border-radius: 50px;
 	background-color:#206CFF;
 	color: white;
-	margin-top: 30px;
+	margin-top: 10px;
 	font-size: 25px;
 	border: 2px solid black;
 }
@@ -99,7 +99,7 @@ button:hover {
 	border-left: 10px solid black ;
 	border-right: 5px solid black ;
 	border-radius: 4px;
-	margin-top: 40px;
+	margin-top: 10px;
 	display: inline-block;
 	position: relative;
 	margin-right: 445px;
@@ -139,7 +139,7 @@ button:hover {
 	position: absolute;
 	border-radius: 50px;
 	color:white;
-	margin-top: 4px;
+	margin-top: 6px;
 	border:1px solid black;
 }
 
@@ -150,7 +150,7 @@ button:hover {
 	position: absolute;
 	border-radius: 50px;
 	color:white;
-	margin-top:39px;
+	margin-top:10px;
 	margin-left: 186px;
 	background: rgb(97,196,25); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(97,196,25,1) 25%, rgba(180,227,145,1) 50%, rgba(97,196,25,1) 73%); /* FF3.6+ */
